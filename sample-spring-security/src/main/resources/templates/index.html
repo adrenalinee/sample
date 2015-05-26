@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>spring security sample</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body th:with="me=${#httpServletRequest.userPrincipal?.principal}">
+	<h1>hello spring security sample</h1>
+	
+	
+	<a href="/login" th:if="${me == null}">로그인</a>
+	<form th:if="${me != null}" th:action="@{/logout}" method="post">
+		<button type="submit">로그아웃</button>
+	</form>
+	<hr />
+	<a href="/users">사용자 목록</a>
+	<p />
+	<div th:if="${me != null}">
+		<span th:text="${me.name}"></span>님 안녕하세요.
+		<br />
+		<a href="/users/me" >내 정보</a>
+	</div>
+
+</body>
+
+</html>
+
+

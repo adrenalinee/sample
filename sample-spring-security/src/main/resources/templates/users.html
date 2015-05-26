@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>spring security sample</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<h1>사용자 목록</h1>
+	<a href="/">홈</a>
+	<hr />
+	
+	<ul>
+		<li th:each="user: ${users}">
+			<a th:href="@{/users/{userId}(userId=${user.userId})}" th:text="${user.name}">신동성</a>
+		</li>
+	</ul>
+</body>
+
+</html>
+
+

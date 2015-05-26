@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>spring security sample</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body th:with="me=${#httpServletRequest.userPrincipal?.principal}">
+	<h1>접근권한이 없습니다.</h1>
+	
+	<a href="/">홈</a>
+	<hr />
+
+</body>
+
+</html>
+
+
