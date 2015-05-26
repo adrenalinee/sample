@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>spring security sample Login</title>
+</head>
+
+<body onload="document.f.username.focus();">
+	<h1>로그인</h1>
+	<form name="f" action="/login" method="POST">
+		<table>
+			<tr>
+				<td>User:</td>
+				<td><input type="text" name="username" value="" /></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type="password" name="password" /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><button type="submit">로그인</button></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

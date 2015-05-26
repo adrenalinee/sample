@@ -33,7 +33,7 @@ public class SampleSpringSecurityApplication extends WebSecurityConfigurerAdapte
 	
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
-		http.formLogin().permitAll() //로그인 화면을 사용함을 알림
+		http.formLogin().loginPage("/login").permitAll() //로그인 화면을 사용함을 알림
 		.and().logout().logoutSuccessUrl("/") //로그아웃한후 메인화면(/)으로 간다
 		.and().authorizeRequests().antMatchers("/").permitAll() //첫 페이지는 아무나 접근 가능
 		.and().authorizeRequests().antMatchers("/users").hasAuthority("ADMIN") //사용자 목록 페이지는 ADMIN 역할을 가진 계정으로 로그인해야 접근가능

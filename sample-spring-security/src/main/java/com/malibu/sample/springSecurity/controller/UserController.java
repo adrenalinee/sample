@@ -7,14 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.malibu.sample.springSecurity.entity.User;
 import com.malibu.sample.springSecurity.service.UserService;
 
 @Controller
 @RequestMapping("/users")
-@SessionAttributes("user")
 public class UserController {
 	
 	@Autowired

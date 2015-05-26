@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-
 <head>
 <title>spring security sample</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -10,6 +9,7 @@
 <body th:with="me=${#httpServletRequest.userPrincipal?.principal}">
 	<h1>hello spring security sample</h1>
 	
+	아잉?
 	
 	<a href="/login" th:if="${me == null}">로그인</a>
 	<form th:if="${me != null}" th:action="@{/logout}" method="post">
@@ -23,9 +23,5 @@
 		<br />
 		<a href="/users/me" >내 정보</a>
 	</div>
-
 </body>
-
 </html>
-
-
