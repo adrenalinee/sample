@@ -9,8 +9,6 @@
 <body th:with="me=${#httpServletRequest.userPrincipal?.principal}">
 	<h1>hello spring security sample</h1>
 	
-	아잉?
-	
 	<a href="/login" th:if="${me == null}">로그인</a>
 	<form th:if="${me != null}" th:action="@{/logout}" method="post">
 		<button type="submit">로그아웃</button>

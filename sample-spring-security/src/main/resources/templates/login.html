@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.springframework.org/security/tags">
 <head>
 <title>spring security sample Login</title>
 </head>
@@ -8,13 +11,14 @@
 <body onload="document.f.username.focus();">
 	<h1>로그인</h1>
 	<form name="f" action="/login" method="POST">
+		<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
 		<table>
 			<tr>
-				<td>User:</td>
-				<td><input type="text" name="username" value="" /></td>
+				<td>아이디:</td>
+				<td><input type="text" name="username" /></td>
 			</tr>
 			<tr>
-				<td>Password:</td>
+				<td>비밀번호:</td>
 				<td><input type="password" name="password" /></td>
 			</tr>
 			<tr>
@@ -22,5 +26,14 @@
 			</tr>
 		</table>
 	</form>
+	<hr />
+	운영자 계정: adrenal/1234
+	<button onclick="document.f.username.value='adrenal';document.f.password.value='1234';">운영자 계정 입력</button>
+	<br />
+	일반 사용자 계정: windmil/5678
+	<button onclick="document.f.username.value='windmil';document.f.password.value='5678';">일반 사용자 계정 입력</button>
+	
+	
+	
 </body>
 </html>
