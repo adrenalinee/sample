@@ -28,7 +28,7 @@ public class SampleSpringSecurityApplication extends WebSecurityConfigurerAdapte
 	
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(userDetailsService);
+		auth.userDetailsService(userDetailsService); //사용자 계정을 체크 하는 서비스를 재정의 함.
 	}
 	
 	@Override
@@ -38,7 +38,7 @@ public class SampleSpringSecurityApplication extends WebSecurityConfigurerAdapte
 		.and().authorizeRequests().antMatchers("/").permitAll() //첫 페이지는 아무나 접근 가능
 		.and().authorizeRequests().antMatchers("/users").hasAuthority("ADMIN") //사용자 목록 페이지는 ADMIN 역할을 가진 계정으로 로그인해야 접근가능
 		.and().exceptionHandling().accessDeniedPage("/accessDenied") //접근권한 없을때 보여줄 페이지
-		.and().authorizeRequests().anyRequest().authenticated(); //그외 페이지들은 모두 인증을 받아야 함
+		.and().authorizeRequests().anyRequest().authenticated(); //그외 페이지들은 인증받은 사용자 모두 접근 가능
 	}
 	
 	public static void main(String[] args) {

@@ -15,6 +15,7 @@ public class Role {
 	@Column(nullable=false)
 	String name;
 	
+	@Column(nullable=false)
 	String authority;
 
 	public Long getRoleId() {
