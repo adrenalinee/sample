@@ -20,6 +20,8 @@ spring-security로 웹 페이지 인증을 구현하는 샘플 프로젝트입�
   - spring-boot-starter-data-jpa
 - java configuration
 
+(본 샘플은 spring-boot 기반으로 작성되었으며, JPA를 통해 database 처리를 하고 있습니다. 그에 대한 설명은 생략합니다)
+
 
 #권한 설정
 * USER: 일반 사용자
