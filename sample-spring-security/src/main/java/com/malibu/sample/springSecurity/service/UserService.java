@@ -18,7 +18,7 @@ public class UserService {
 		return userRepository.findAll();
 	}
 	
-	@Transactional
+	@Transactional(readOnly=true)
 	public User get(String userId) {
 		return userRepository.findOne(userId);
 	}
