@@ -16,6 +16,6 @@ public interface UserRepository extends JpaRepository<User, String> {
 	
 	Page<User> findByName(String name, Pageable pageable);
 	
-	@Query("select u from User u join u.company on c where c.name = :companyName")
+	@Query("select u from User u join u.company c where c.name = :companyName")
 	List<User> getCompanyMember(@Param("companyName") String companyName);
 }
